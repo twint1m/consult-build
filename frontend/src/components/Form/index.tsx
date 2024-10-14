@@ -15,9 +15,11 @@ import {
   MentorLabel,
   MentorSpan,
   Link,
+  ProblemButton
 } from "./styles";
 import { useFindMentor } from "./hook";
 import { Outlet } from "react-router-dom";
+import { toast, ToastContainer, Bounce } from 'react-toastify';
 
 const ConsultationForm: React.FC = () => {
   const { studentName, setStudentName, group, setGroup, mentor } = useFindMentor();
@@ -49,15 +51,44 @@ const ConsultationForm: React.FC = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      alert("Консультация успешно записана");
+      toast.success('Вы записаны на консультаицю!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
       alert("Ошибка при отправке данных");
     }
   };
 
+  const handleProblemReport = () => {
+    window.location.href = "https://t.me/twint1m";
+  };
+
+
   return (
       <Container>
+        <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover={false}
+            theme="light"
+            transition={Bounce}
+        />
+
         <Title>Запись на консультацию</Title>
         <form onSubmit={handleSubmit}>
           <FormGroup>
@@ -133,6 +164,9 @@ const ConsultationForm: React.FC = () => {
           </CheckboxGroup>
           <Button type="submit">Отправить</Button>
         </form>
+        <ProblemButton type="button" onClick={handleProblemReport}>
+          Сообщить о проблеме
+        </ProblemButton>
         <Outlet />
       </Container>
   );

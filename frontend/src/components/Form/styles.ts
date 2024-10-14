@@ -204,3 +204,20 @@ export const CheckboxLabel = styled.label`
     font-size: 0.45rem;
   }
 `;
+
+export const ProblemButton = styled.button`
+    display: flex;
+    margin: auto;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #ff7875;
+  }
+`;
