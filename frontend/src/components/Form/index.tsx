@@ -19,17 +19,17 @@ import {
 } from "./styles";
 import { useFindMentor } from "./hook";
 import { Outlet } from "react-router-dom";
-import { toast, ToastContainer, Bounce } from 'react-toastify';
+import Toaster from "../ui/Toaster";
 
 const ConsultationForm: React.FC = () => {
   const { studentName, setStudentName, group, setGroup, mentor } = useFindMentor();
   const [topic, setTopic] = useState("");
   const [comments, setComments] = useState("");
   const [discord, setDiscord] = useState("");
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     const data = {
       student_name: studentName,
       group,
@@ -49,46 +49,30 @@ const ConsultationForm: React.FC = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("Ошибка при отправке");
       }
-      toast.success('Вы записаны на консультаицю!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
+
+      setToast({ message: "Вы записаны на консультацию!", type: "success" });
+      setStudentName("");
+      setGroup("");
+      setTopic("");
+      setComments("");
+      setDiscord("");
     } catch (error) {
-      console.error("Ошибка при отправке данных:", error);
-      alert("Ошибка при отправке данных");
+      setToast({ message: "Ошибка при отправке данных", type: "error" });
     }
   };
 
   const handleProblemReport = () => {
-    window.location.href = "https://t.me/twint1m";
+    window.location.href = "https://github.com/twint1m/consult-build/issues/new";
   };
 
+  const closeToast = () => {
+    setToast(null);
+  };
 
   return (
       <Container>
-        <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss={false}
-            draggable
-            pauseOnHover={false}
-            theme="light"
-            transition={Bounce}
-        />
-
         <Title>Запись на консультацию</Title>
         <form onSubmit={handleSubmit}>
           <FormGroup>
@@ -129,6 +113,7 @@ const ConsultationForm: React.FC = () => {
                 name="topic"
                 placeholder={"Пример: Эталонные модели"}
                 required
+                value={topic}
                 onChange={(e) => setTopic(e.target.value)}
             />
           </FormGroup>
@@ -140,6 +125,7 @@ const ConsultationForm: React.FC = () => {
                 id="comments"
                 name="comments"
                 placeholder="Пример: Вопросы по настройке сетевого оборудования или помощь в проекте по ИКТ"
+                value={comments}
                 onChange={(e) => setComments(e.target.value)}
             />
           </FormGroup>
@@ -151,6 +137,7 @@ const ConsultationForm: React.FC = () => {
                 name="discord"
                 placeholder={"В формате @username"}
                 required
+                value={discord}
                 onChange={(e) => setDiscord(e.target.value)}
             />
           </FormGroup>
@@ -167,6 +154,7 @@ const ConsultationForm: React.FC = () => {
         <ProblemButton type="button" onClick={handleProblemReport}>
           Сообщить о проблеме
         </ProblemButton>
+        {toast && <Toaster message={toast.message} type={toast.type} onClose={closeToast} />}
         <Outlet />
       </Container>
   );

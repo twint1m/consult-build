@@ -9,10 +9,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "consent",
-    element: <Consent />,
+    children: [
+      {
+        path: "consent",
+        element: <Consent />,
+      },
+    ],
   },
 ]);
 
