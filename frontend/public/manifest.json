@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Форма записи на консультацию1",
+  "name": "Форма для записи на консультацию по предмету ИКТ/Сети",
   "icons": [
     {
       "src": "favicon.ico",
