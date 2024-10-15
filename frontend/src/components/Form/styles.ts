@@ -100,7 +100,8 @@ export const Select = styled.select`
 `;
 
 export const TextArea = styled.textarea`
-  width: 100%;
+    max-height: 500px;
+    width: 100%;
   height: 120px;
   padding: 12px;
   border: 1px solid #ccc;
