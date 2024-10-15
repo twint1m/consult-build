@@ -8,13 +8,11 @@ import App from "./App";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "consent",
-        element: <Consent />,
-      },
-    ],
+    element: <App/>,
+  },
+  {
+    path: "consent",
+    element: <Consent />,
   },
 ]);
 
