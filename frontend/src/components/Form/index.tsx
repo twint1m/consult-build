@@ -151,9 +151,9 @@ const ConsultationForm: React.FC = () => {
           </CheckboxGroup>
           <Button type="submit">Отправить</Button>
         </form>
-        <ProblemButton type="button" onClick={handleProblemReport}>
-          Сообщить о проблеме
-        </ProblemButton>
+        {/*<ProblemButton type="button" onClick={handleProblemReport}>*/}
+        {/*  Сообщить о проблеме*/}
+        {/*</ProblemButton>*/}
         {toast && <Toaster message={toast.message} type={toast.type} onClose={closeToast} />}
         <Outlet />
       </Container>
