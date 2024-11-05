@@ -1,6 +1,5 @@
 export interface StudentInfo {
-    ФИО: string;
-    Telegram: string;
+    FIO: string;
 }
 
 export interface MentorData {

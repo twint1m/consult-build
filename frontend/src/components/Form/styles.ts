@@ -97,6 +97,11 @@ export const Select = styled.select`
   @media (max-width: 480px) {
     padding: 8px;
   }
+
+    option {
+        color: black; 
+        background-color: #fff;
+    }  
 `;
 
 export const TextArea = styled.textarea`

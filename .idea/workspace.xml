@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8cd262eb-8a56-4182-b654-3e9731c07c75" name="Changes" comment="commitr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Form/hook.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Form/hook.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Form/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Form/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Form/interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Form/interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Form/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Form/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/data/students.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "ImportCost",
-    "ts.external.directory.path": "/Users/timurshorahanov/Desktop/test-pr/new/frontend/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/timurshorahanov/Desktop/projects/consult-build/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -58,6 +65,7 @@
       <updated>1728912944336</updated>
       <workItem from="1728912945422" duration="4830000" />
       <workItem from="1728923499771" duration="12049000" />
+      <workItem from="1730835151717" duration="8507000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
